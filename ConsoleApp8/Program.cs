@@ -14,3 +14,14 @@ for(int i = 0; i < wysokosc; i++)
     }
     Console.WriteLine();
 }
+
+//----------------------------------------------------------------------------------------------------------------------------------------------
+Console.WriteLine("Program rysujacy wieze z gwiazdek o zadanej przez usera wysokosci");
+
+Console.WriteLine("Jaka ma być wysokość wieży? podaj liczbę");
+int pietraWiezy = int.Parse(Console.ReadLine());
+
+for (int i = 1; i <= pietraWiezy; i++)
+{
+    Console.WriteLine(new string('*', i * 2 - 1));
+}
