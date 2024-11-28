@@ -50,3 +50,40 @@ for (int i = 1; i <= pietraWiezy3; i++)
 
     Console.WriteLine(new string(' ', spaces) + new string('*', stars));
 }
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------
+Console.WriteLine("Program sprawdzający czy podana liczba jest liczbą pierwszą");
+
+Console.WriteLine("Podaj liczbę: ");
+
+int answer = int.Parse(Console.ReadLine());
+
+bool isPrime(int answer)
+{
+
+    if(answer <=1)
+    {
+        return false;
+    }
+    if (answer == 2)
+    {
+        return true;
+    }
+
+    if(answer % 2 == 0)
+    {
+        return false;
+    }
+
+    for (int i = 3; i <= Math.Sqrt(answer); i += 2)
+    {
+        if (answer % i == 0)
+        {
+            return false;
+        }
+    }
+    return true;
+}
+if (isPrime(answer))
+    Console.WriteLine($"Podana liczba {answer} jest liczbą pierwszą!");
+else Console.WriteLine("Podana liczba nie jest liczba pierwszą!");
