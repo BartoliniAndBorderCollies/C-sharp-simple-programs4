@@ -1,4 +1,6 @@
-﻿Console.WriteLine("Program rysujący prostokąt z gwiazdek o zadanych przez usera wymiarach, dla a i b");
+﻿using System.Reflection.Metadata.Ecma335;
+
+Console.WriteLine("Program rysujący prostokąt z gwiazdek o zadanych przez usera wymiarach, dla a i b");
 
 Console.WriteLine("Podaj szerokosć");
 int szerokosc = int.Parse(Console.ReadLine());
@@ -87,3 +89,25 @@ bool isPrime(int answer)
 if (isPrime(answer))
     Console.WriteLine($"Podana liczba {answer} jest liczbą pierwszą!");
 else Console.WriteLine("Podana liczba nie jest liczba pierwszą!");
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------
+Console.WriteLine("Program obliczający największy wspólny dzielnik");
+
+Console.WriteLine("Podaj liczbę a: ");
+int a = int.Parse(Console.ReadLine());
+Console.WriteLine("Podaj liczbę b: ");
+int b = int.Parse(Console.ReadLine());
+
+int ObliczNWD(int a, int b)
+{
+    while (b != 0)
+    {
+        int temporary = b;
+        b = a % b;
+        a = temporary;
+    }
+    return a;
+}
+int najwiekszyDzielnik = ObliczNWD(a,b);
+Console.WriteLine($"Największy wspólny dzielnik liczb {a} oraz {b} wynosi {najwiekszyDzielnik}");
+
