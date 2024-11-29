@@ -91,7 +91,7 @@ if (isPrime(answer))
 else Console.WriteLine("Podana liczba nie jest liczba pierwszą!");
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------
-Console.WriteLine("Program obliczający największy wspólny dzielnik");
+Console.WriteLine("Program obliczający największy wspólny dzielnik i najmniejszą wspólną wielokrotność");
 
 Console.WriteLine("Podaj liczbę a: ");
 int a = int.Parse(Console.ReadLine());
@@ -108,6 +108,19 @@ int ObliczNWD(int a, int b)
     }
     return a;
 }
+
+int ObliczNWW(int a, int b)
+{
+    
+    int dzielnik = ObliczNWD(a, b);
+    return a * b / dzielnik;
+
+}
+
 int najwiekszyDzielnik = ObliczNWD(a,b);
-Console.WriteLine($"Największy wspólny dzielnik liczb {a} oraz {b} wynosi {najwiekszyDzielnik}");
+int najmniejszaWspolnaWielokrotnosc = ObliczNWW(a, b);
+Console.WriteLine($"Największy wspólny dzielnik liczb {a} oraz {b} wynosi {najwiekszyDzielnik}, natomiast najmniejsza wspólna wielokrotność wynosi: {najmniejszaWspolnaWielokrotnosc}");
+
+
+
 
